@@ -67,7 +67,6 @@ while exit_game == False:
         pc_shots, coordinates = funciones.generate_shot(pc_shots, variables.BOARD_SIZE)
         shot_result = funciones.shoot(pc_board, player_board, coordinates)
         succesful_shot = shot_result[2]
-        # mensaje de si has tocado/hundido
   
         if succesful_shot == True:
             print('\n¡Tocado!')

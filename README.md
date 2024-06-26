@@ -57,8 +57,8 @@ Este es un ejemplo de los tableros en el momento en el que se inicia el juego:
                             10 |       0     0     |                            10 |                   |
                                ---------------------                               ---------------------
                                       
-Las 'S' en el tablero representan los barcos.
-Cuando se dispara, si se impacta en un barco enemigo, se marcará con una "X" en el tablero. Si el disparo cae en el agua, se marcará con un guión "-".
+Las 'O' en el tablero representan los barcos.
+Cuando se dispara, si se impacta en un barco enemigo, se marcará con una "X" en el tablero. Si el disparo cae en el agua, se marcará con "~".
 
 Según vaya avanzando la partida, los tableros se irán viendo de la siguiente manera: 
 

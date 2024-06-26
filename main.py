@@ -47,7 +47,7 @@ while exit_game == False:
             print('\n¡Has tocado!')
             pc_lives -= 1
             if pc_lives == 0:
-                print('¡Has ganado!')
+                print(f'¡Enhirabuena {player_id}, has ganado!')
                 break
             else:
                 time.sleep(.5)

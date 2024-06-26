@@ -5,16 +5,11 @@ def welcome():
     
     print(f'{'_'*100}\n\n¡Bienvenido a Battleship: Golden Hind Edition!\n\n' \
         'Cómo jugar:\n'\
-        '   1. Introduzca su nombre de jugador para iniciar la partida.\n'\
-        '   2. Introduzca la posición de sus barcos en el tablero de sus barcos en el tablero mediante coordenadas (X,Y) y orientación (N, E, S, W)\n'\
-        '      Los barcos a colocar son, en este orden:\n'\
-        '       - A1: 4 posiciones de eslora.\n'\
-        '       - B1 y B2: 3 posiciones de eslora.\n'\
-        '       - C1, C2 y C3: 2 posiciones de eslora.\n'\
-        '       - D1, D2, D3 y D4: 1 posición de eslora.\n'\
-        '   3. El primer turno es suyo, introducza las coordenadas de disparo. Si acierta, continúa jugando, sino el turno pasa a la máquina.\n'\
-        '   4. El juego finaliza cuando todos sus barcos o los de la máquina están hundidos.\n\n'\
-        'Puede salir del juego escribiendo "exit" en cualquier input.\n\n'\
+        '   1. Introduce tu nombre de jugador para iniciar la partida.\n'\
+        '   2. El juego posiciona de forma aleatoria todos los barcos. \n'\
+        '   3. El primer turno es tuyo, introduce las coordenadas de disparo. Si aciertas, continúas jugando, si no el turno pasa a la máquina.\n'\
+        '   4. El juego finaliza cuando todos los barcos de un jugador están hundidos.\n\n'\
+        'Puedes salir del juego escribiendo "exit" en cualquier input.\n\n'\
         f'¡Buena suerte!\n{'_'*100}\n')
 
 
@@ -34,7 +29,7 @@ def get_shot_coordinates(size):
     try:
         coordinates = []
         for i in range(2):
-            input_value = (input(f'{'Fila' if i == 0 else 'Columna'} del disparo (1-10): ')).replace(' ', '').replace(',', '.')
+            input_value = (input(f'{'Fila' if i == 0 else 'Columna'} del disparo (1-{size}): ')).replace(' ', '').replace(',', '.')
             if input_value == 'exit':
                 break
             else:

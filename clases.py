@@ -77,15 +77,18 @@ class Board:
             for i in range(length):
                 self.board[x + i, y] = 'O'
                 self.ship_positions.append((x + i, y))
+      
         
     def add_index(self, board):
         # Generates axis for boards
+        
         size = board.shape[0]
         row_index = np.arange(size) + 1   
         col_index = np.concatenate([[' '], row_index]).reshape(size + 1, 1)
         stack_row = np.vstack([row_index, board])
         final_board = np.hstack([col_index, stack_row])
         return final_board
+    
     
     def print_board(self, oponent_board, reveal_ships = False):
         # Prints player's board and oponent board with or whitout ships

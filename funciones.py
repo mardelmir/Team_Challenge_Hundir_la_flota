@@ -29,6 +29,8 @@ def get_shot_coordinates():
     Ensures the provided input is of type int for both row and column (col) coordinates by removing accidental blank spaces and replacing ',' with '.'.
     Ensures the provided input is within the limits of the game board.
     '''
+    
+    # Try error para input que no sea número o 'exit' diga que no es un input válido y se vuelva a llamar 
     coordinates = []
     for i in range(2):
         input_value = (input(f'{'Fila' if i == 0 else 'Columna'} del disparo (1-10): ')).replace(' ', '').replace(',', '.')

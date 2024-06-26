@@ -31,7 +31,7 @@ while exit_game == False:
     if turn == 'player':
         print('_'*100, '\n')
         print('*** Tu turno ***', '\n')
-        print(f'Tu tablero{' '*29}Tablero oponente')
+        print(f'Tu tablero{' '*31}Tablero oponente')
         player_board.print_board(pc_board)
         
         print('')
@@ -60,7 +60,7 @@ while exit_game == False:
     else:
         print('_'*100, '\n')
         print('*** Turno del oponente ***', '\n')
-        print(f'Tu tablero{' '*29}Tablero oponente')
+        print(f'Tu tablero{' '*31}Tablero oponente')
         player_board.print_board(pc_board)
         
         pc_shots, coordinates = funciones.generate_shot(pc_shots, variables.BOARD_SIZE)

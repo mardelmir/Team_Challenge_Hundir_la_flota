@@ -35,13 +35,12 @@ while exit_game == False:
         player_board.print_board(pc_board, reveal_ships = True)
         
         print('')
-        coordinates = funciones.get_shot_coordinates()
+        coordinates = funciones.get_shot_coordinates(variables.BOARD_SIZE)
         if coordinates == ():
             break
         
         shot_result = funciones.shoot(player_board, pc_board, coordinates)
         succesful_shot = shot_result[2]
-        # update boards
         
         if succesful_shot == True:
             print('\n¡Has tocado!')

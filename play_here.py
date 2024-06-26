@@ -35,7 +35,7 @@ while exit_game == False:
         player_board.print_board(pc_board)
         
         print('')
-        coordinates = funciones.get_shot_coordinates()
+        coordinates = funciones.get_shot_coordinates(variables.BOARD_SIZE)
         if coordinates == ():
             break
         

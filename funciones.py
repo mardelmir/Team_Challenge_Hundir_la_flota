@@ -2,6 +2,7 @@ import numpy as np
 
 def welcome():
     # Prints welcome message with game instructions.
+    
     print(f'{'_'*100}\n\n¡Bienvenido a Battleship: Golden Hind Edition!\n\n' \
         'Cómo jugar:\n'\
         '   1. Introduzca su nombre de jugador para iniciar la partida.\n'\
@@ -19,31 +20,38 @@ def welcome():
 
 def player_name():
     # Requests the player's name. If none is provided, 'human_player' is asigned as default.
+    
     name = input('Introduzca su nombre: ').strip()
     return name if name != '' else False
 
     
-def get_shot_coordinates():
+def get_shot_coordinates(size):
     '''
     Requests shot coordinates to the player. The player can repeat coordinates from a previous shot.
     Ensures the provided input is of type int for both row and column (col) coordinates by removing accidental blank spaces and replacing ',' with '.'.
     Ensures the provided input is within the limits of the game board.
     '''
-    
-    # Try error para input que no sea número o 'exit' diga que no es un input válido y se vuelva a llamar 
-    coordinates = []
-    for i in range(2):
-        input_value = (input(f'{'Fila' if i == 0 else 'Columna'} del disparo (1-10): ')).replace(' ', '').replace(',', '.')
-        if input_value == 'exit':
-            break
-        else:
-            coordinate = int(float(input_value)) - 1
-            if coordinate > 9:
-                print('¡La coordenada introducida está fuera del tablero!')
-                return get_shot_coordinates()
+    try:
+        coordinates = []
+        for i in range(2):
+            input_value = (input(f'{'Fila' if i == 0 else 'Columna'} del disparo (1-10): ')).replace(' ', '').replace(',', '.')
+            if input_value == 'exit':
+                break
             else:
-                coordinates.append(coordinate)
-    return tuple(coordinates)
+                coordinate = int(float(input_value)) - 1
+                if coordinate < 0:
+                    print('¡El valor introducido no es válido (número negativo)!')
+                    return get_shot_coordinates(size)
+                elif coordinate > size-1:
+                    print('¡La coordenada introducida está fuera del tablero!')
+                    return get_shot_coordinates(size)
+                else:
+                    coordinates.append(coordinate)
+        return tuple(coordinates)
+    except ValueError:
+        print('¡El valor introducido no es válido (texto)!')
+        get_shot_coordinates(size)
+        
 
 
 def generate_shot(pc_shots, size):

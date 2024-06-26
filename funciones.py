@@ -16,7 +16,7 @@ def welcome():
 def player_name():
     # Requests the player's name. If none is provided, 'human_player' is asigned as default.
     
-    name = input('Introduzca su nombre: ').strip()
+    name = input('Introduce tu nombre: ').strip()
     return name if name != '' else False
 
     
@@ -37,7 +37,7 @@ def get_shot_coordinates(size):
                 if coordinate < 0:
                     print('¡El valor introducido no es válido (número negativo)!')
                     return get_shot_coordinates(size)
-                elif coordinate > size-1:
+                elif coordinate > size - 1:
                     print('¡La coordenada introducida está fuera del tablero!')
                     return get_shot_coordinates(size)
                 else:
@@ -47,7 +47,6 @@ def get_shot_coordinates(size):
         print('¡El valor introducido no es válido (texto)!')
         get_shot_coordinates(size)
         
-
 
 def generate_shot(pc_shots, size):
     # Generates random shot coordinates for the PC, ensuring said coordinates are within the limits of the game board and have not been used before.
@@ -61,7 +60,7 @@ def generate_shot(pc_shots, size):
 
 
 def shoot(player_board, oponent_board, coordinate):
-    # Updates current player board and oponent board after shooting
+    # Updates current player board and oponent board after a shot is made
 
     if oponent_board.board[coordinate] == 'O':
         oponent_board.board[coordinate] = 'X'

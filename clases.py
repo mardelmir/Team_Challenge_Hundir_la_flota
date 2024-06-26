@@ -67,7 +67,7 @@ class Board:
         
     
     def place_ships(self, x, y, length, orientation):
-        # Places the ship on the board and updates coordinates of the ship in the ship_positions list
+        # Places ship on the board and updates coordinates of the ship in the ship_positions list
       
         if orientation =='H':
             for i in range(length):
@@ -80,7 +80,7 @@ class Board:
       
         
     def add_index(self, board):
-        # Generates axis for boards
+        # Generates axis for boards.
         
         size = board.shape[0]
         row_index = np.arange(size) + 1   
@@ -91,7 +91,7 @@ class Board:
     
     
     def print_board(self, oponent_board, reveal_ships = False):
-        # Prints player's board and oponent board with or whitout ships
+        # Prints player board and oponent board with or whitout showing the placement of the oponent's ships
         
         if reveal_ships: 
             for row_b1, row_b2 in zip(self.add_index(self.board), self.add_index(oponent_board.board)):

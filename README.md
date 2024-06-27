@@ -4,13 +4,16 @@
 Este es un juego clásico de estrategia naval donde tu objetivo es hundir todos los barcos de tu oponente (la máquina) antes de que él hunda los tuyos.
 
 ## **Índice**   
-1. [Descripción](#id1)
-2. [Instalaciones previas](#id2)
-3. [El tablero](#id3)
-4. [Cómo jugar](#id4)
-5. [Estructura del código](#id5)
+1. [Descripción](#descripción)
+   - [Reglas básicas](#reglas-básicas)
+   - [Objetivo](#objetivo)
+2. [Instalaciones previas](#instalaciones-previas)
+3. [El tablero](#el-tablero)
+4. [Cómo jugar](#cómo-jugar)
+5. [Estructura del código](#estructura-del-código)
+6. [Autores](#autores)
 
-## Descripción<a name="id1"></a>
+## Descripción
 ### Reglas básicas
 1. **Jugadores**: Es un juego de dos jugadores: la máquina y tú.
 2. **Tablero**: Cada jugador tiene un tablero de 10 x 10 posiciones donde colocará sus barcos.
@@ -26,13 +29,13 @@ El objetivo es hundir todos los barcos del oponente.
 
 En cada turno, los jugadores se alternan para disparar al tablero del oponente. Si aciertas, sigues jugando. El juego termina cuando un jugador ha hundido todos los barcos del oponente.
 
-## Instalaciones previas<a name="id2"></a>
+## Instalaciones previas
 ### Prerrequisitos
 
 - Tener instalado Python 3.x
 - Tener instalado Numpy
 
-## El tablero<a name="id3"></a>
+## El tablero
 El tablero consta de 10 columnas y 10 filas (1 - 10).
 
 Cada jugador dispondrá de 2 tableros: 
@@ -79,7 +82,7 @@ Según vaya avanzando la partida, los tableros se irán viendo de la siguiente m
                                ---------------------                               ---------------------
 
 
-## Cómo jugar<a name="id4"></a>
+## Cómo jugar
 1. Al iniciar el juego, se pedirá que introduzcas tu nombre. En caso de no introducir nada, se asigna un nombre por defecto.
 2. Los tableros de ambos jugadores se inicializan automáticamente con los barcos colocados aleatoriamente.
 3. Empiezas jugando tú. En cada turno, se te pedirán las coordenadas del disparo con dos inputs numéricos para las filas y las columnas. Si las coordenadas introducidas están fuera del tablero, se vuelven a pedir automáticamente.
@@ -88,7 +91,7 @@ Según vaya avanzando la partida, los tableros se irán viendo de la siguiente m
 6. Puedes salir del juego escribiendo 'exit' en cualquiera de los inputs que aparecen (incluido el inicial, donde se solicita el nombre).
 
 
-## Estructura del código<a name="id5"></a>
+## Estructura del código
 - `main.py`: controla el flujo principal del juego, susceptible a futuras actualizaciones y/o correcciones.
 - `clases.py`: define la clase principal 'Board', en la que se basa el desarrollo del juego.
 - `funciones.py`: contiene funciones auxiliares necesarias para el desarrollo del juego.
@@ -97,3 +100,9 @@ Según vaya avanzando la partida, los tableros se irán viendo de la siguiente m
 
 
 Aquí tienes una pequeña [presentación](https://www.canva.com/design/DAGJOZCvmkc/SV6SWVUSyNcaQkWUOC5npw/edit?utm_content=DAGJOZCvmkc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) del trabajo
+
+ 
+#### Autores
+- [mailliwJ](https://github.com/mailliwJ)
+- [mardelmir](https://github.com/mardelmir)
+- [noemontiels](https://github.com/noemontiels)

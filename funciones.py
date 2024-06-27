@@ -35,17 +35,17 @@ def get_shot_coordinates(size):
             else:
                 coordinate = int(float(input_value)) - 1
                 if coordinate < 0:
-                    print('¡El valor introducido no es válido (número negativo)!')
+                    print('¡El valor introducido no es válido! (número negativo)\n')
                     return get_shot_coordinates(size)
                 elif coordinate > size - 1:
-                    print('¡La coordenada introducida está fuera del tablero!')
+                    print('¡La coordenada introducida está fuera del tablero!\n')
                     return get_shot_coordinates(size)
                 else:
                     coordinates.append(coordinate)
         return tuple(coordinates)
     except ValueError:
-        print('¡El valor introducido no es válido (texto)!')
-        get_shot_coordinates(size)
+        print('¡El valor introducido no es válido! (texto)\n')
+        return get_shot_coordinates(size)
         
 
 def generate_shot(pc_shots, size):
@@ -59,16 +59,16 @@ def generate_shot(pc_shots, size):
     return pc_shots, shot
 
 
-def shoot(player_board, oponent_board, coordinate):
+def shoot(player_board, oponent_board, coordinates):
     # Updates current player board and oponent board after a shot is made
 
-    if oponent_board.board[coordinate] == 'O':
-        oponent_board.board[coordinate] = 'X'
-        player_board.shots_board[coordinate] = 'X'
+    if oponent_board.board[coordinates] == 'O':
+        oponent_board.board[coordinates] = 'X'
+        player_board.shots_board[coordinates] = 'X'
         successful_shot = True
     else:
-        oponent_board.board[coordinate] = '~'
-        player_board.shots_board[coordinate] = '~'
+        oponent_board.board[coordinates] = '~'
+        player_board.shots_board[coordinates] = '~'
         successful_shot = False
     
     return player_board, oponent_board, successful_shot

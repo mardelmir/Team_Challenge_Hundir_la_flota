@@ -4,8 +4,8 @@ import numpy as np
 import time
 import variables
 
+
 # Game variables
-exit_game = False
 turn = 'player'
 succesful_shot = False
 
@@ -23,11 +23,8 @@ pc_board = clases.Board(variables.PC_ID, variables.BOARD_SIZE, variables.SHIPS)
 funciones.welcome()
 player_id = funciones.player_name()
 
-if player_id == 'exit':
-    exit_game = True
-
 # The game starts. It will end if the player writes 'exit' in any input
-while exit_game == False:
+while player_id != 'exit':
     if turn == 'player':
         print('_'*100, '\n')
         print('*** Tu turno ***', '\n')
@@ -37,7 +34,7 @@ while exit_game == False:
         print('')
         coordinates = funciones.get_shot_coordinates(variables.BOARD_SIZE)
         if coordinates == ():
-            break
+           break
         
         shot_result = funciones.shoot(player_board, pc_board, coordinates)
         succesful_shot = shot_result[2]
@@ -46,7 +43,7 @@ while exit_game == False:
             print('\n¡Has tocado!')
             pc_lives -= 1
             if pc_lives == 0:
-                print('¡Has ganado!')
+                print(f'¡Enhirabuena {player_id}, has ganado!')
                 break
             else:
                 time.sleep(.5)
